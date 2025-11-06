@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container quiz-page">
+    <h1 class="title">🧠 Daily Quiz Challenge!</h1>
+    <h3 class="subtitle">Listen and choose the right answer! 🌟</h3>
+
+    <div id="quiz-box" class="quiz-box">
+      <p id="question" class="question"></p>
+      <div id="options" class="options"></div>
+    </div>
+
+    <div class="score-box">
+      <p>⭐ Score: <span id="score">0</span></p>
+      <button class="btn" onclick="startQuiz()">🔄 Next Question</button>
+      <button class="btn" onclick="window.location.href='home.html'">🏠 Home</button>
+      
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Phonics Learning Center</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loginPage" class="page active">
+    <div class="login-container">
+      <div class="login-box">
+        <div class="login-icon">🎨</div>
+        <h1 class="login-title">Kids Learning Fun!</h1>
+        <p class="login-subtitle">Learn ABC & 123 with Fun!</p>
+
+        <div class="button-group">
+          <button class="btn sign-in" onclick="window.location.href='login.html'">🔑 Sign In</button>
+          <button class="btn sign-up" onclick="window.location.href='signup.html'">📝 Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminLoginPage" class="page">
+    <div class="login-container admin-bg">
+      <div class="login-box">
+        <div class="login-icon">👨‍💼</div>
+        <h2 class="admin-title">Admin Login</h2>
+
+        <input type="text" id="adminUsername" placeholder="Username" class="input-field" />
+        <input type="password" id="adminPassword" placeholder="Password" class="input-field" />
+
+        <button onclick="window.location.href='admin.html'" class="btn btn-admin-submit">Login</button>
+        <button onclick="backToLogin()" class="btn btn-back">Back</button>
+
+        <p class="demo-text">Demo credentials: sahil / sahil@1</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Firebase SDK code -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkn_LnXOyle656-65IEjf_B8Bgh4iVTBw",
+      authDomain: "phonics-01.firebaseapp.com",
+      projectId: "phonics-01",
+      storageBucket: "phonics-01.firebasestorage.app",
+      messagingSenderId: "209087528553",
+      appId: "1:209087528553:web:8b271790613b5b99352cf8",
+      measurementId: "G-QPXMT2NQ8Z"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    console.log("✅ Firebase connected successfully!");
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

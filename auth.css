@@ -1,0 +1,118 @@
+/* ====== Auth Pages (Sign Up / Sign In) ====== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.auth-container h2 {
+  color: #e52e71;
+  margin-bottom: 15px;
+}
+
+.auth-container input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.auth-container button {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 95%;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-container button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.auth-container p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.auth-container a {
+  color: #e52e71;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* ====== Home Page Buttons (Sign In / Sign Up) ====== */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 14px 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn.sign-in {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+.btn.sign-up {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+/* ====== Glow Animation for Buttons ====== */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Add glow effect when hovered */
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  animation: glowPulse 1.5s infinite alternate;
+}
+

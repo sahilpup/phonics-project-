@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phonics Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="navbar">
+    <div class="nav-content">
+      <div class="nav-left">
+        <div class="nav-icon">🎨</div>
+        <h1 class="nav-title">Kids Learning</h1>
+      </div>
+      <div class="nav-right">
+        <div class="stars-container">
+          <span class="star-icon">⭐</span>
+          <span id="starCount">0</span>
+        </div>
+       <button class="btn-logout">🚪 Logout</button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="home-container">
+    <div class="home-header">
+      <h2 class="home-title">What do you want to learn today?</h2>
+      <p class="home-subtitle">Choose an activity below! 🌟</p>
+    </div>
+
+    <div class="menu-grid">
+      <button onclick="window.location.href='letters.html'" class="menu-card">
+        <div class="card-icon">🔤</div>
+        <h3 class="card-title purple">Learn ABC</h3>
+        <p class="card-desc">Letters and sounds!</p>
+      </button>
+
+      <button onclick="window.location.href='counting.html'" class="menu-card">
+        <div class="card-icon">🔢</div>
+        <h3 class="card-title blue">Count Numbers</h3>
+        <p class="card-desc">Learn to count!</p>
+      </button>
+
+      <button onclick="window.location.href='game.html'" class="menu-card">
+        <div class="card-icon">🎮</div>
+        <h3 class="card-title green">Fun Games</h3>
+        <p class="card-desc">Play and learn!</p>
+      </button>
+
+      <button onclick="window.location.href='quiz.html'" class="menu-card">
+        <div class="card-icon">❓</div>
+        <h3 class="card-title orange">Quiz Time</h3>
+        <p class="card-desc">Test your knowledge!</p>
+      </button>
+    </div>
+  </div>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDkn_LnXOyle656-65IEjf_B8Bgh4iVTBw",
+    authDomain: "phonics-01.firebaseapp.com",
+    projectId: "phonics-01",
+    storageBucket: "phonics-01.appspot.com",
+    messagingSenderId: "209087528553",
+    appId: "1:209087528553:web:8b271790613b5b99352cf8",
+    measurementId: "G-QPXMT2NQ8Z"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("✅ User logged in:", user.email);
+    } else {
+      console.log("❌ No user found, redirecting...");
+      window.location.href = "login.html";
+    }
+  });
+
+  const logoutBtn = document.querySelector(".btn-logout");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+      alert("You have been logged out!");
+      window.location.href = "login.html";
+    });
+  }
+</script>
+
+</body>
+</html>

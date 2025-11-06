@@ -1,0 +1,725 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* Page Management */
+.page {
+    display: none;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Login Page Styles */
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a855f7, #ec4899, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.admin-bg {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+}
+
+.login-box {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    padding: 40px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.login-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #9333ea;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    color: #6b7280;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.admin-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #6366f1;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-user {
+    background: linear-gradient(135deg, #34d399, #3b82f6);
+    color: white;
+}
+
+.btn-admin {
+    background: linear-gradient(135deg, #fb923c, #ec4899);
+    color: white;
+}
+
+.btn-admin-submit {
+    background: #6366f1;
+    color: white;
+}
+
+.btn-back {
+    background: #d1d5db;
+    color: #374151;
+}
+
+.btn-save {
+    background: #10b981;
+    color: white;
+    flex: 1;
+}
+
+.btn-cancel {
+    background: #6b7280;
+    color: white;
+    flex: 1;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+.demo-text {
+    margin-top: 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(135deg, #9333ea, #ec4899);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.admin-navbar {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-icon {
+    font-size: 32px;
+}
+
+.nav-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stars-container {
+    background: #fbbf24;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.star-icon {
+    font-size: 20px;
+}
+
+.star-count {
+    font-weight: bold;
+    color: #7c2d12;
+    font-size: 18px;
+}
+
+.btn-logout {
+    background: #ef4444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-logout:hover {
+    background: #dc2626;
+}
+
+/* Content Pages */
+.content-page {
+    background: linear-gradient(135deg, #93c5fd, #c084fc, #fda4af);
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.home-container,
+.content-container,
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-title,
+.page-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.home-subtitle {
+    font-size: 22px;
+    color: white;
+}
+
+.btn-back-home {
+    background: white;
+    color: #9333ea;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.btn-back-home:hover {
+    transform: scale(1.05);
+}
+
+/* Menu Grid */
+.menu-grid,
+.game-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: none;
+    text-align: center;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+}
+
+.card-icon {
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-title.purple { color: #9333ea; }
+.card-title.blue { color: #3b82f6; }
+.card-title.green { color: #10b981; }
+.card-title.orange { color: #f97316; }
+
+.card-desc {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+/* Letter and Number Grids */
+.letter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.letter-card,
+.number-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    text-align: center;
+}
+
+.letter-card:hover,
+.number-card:hover {
+    transform: scale(1.1);
+    background: #fef3c7;
+}
+
+.letter-emoji,
+.number-emoji {
+    font-size: 56px;
+    margin-bottom: 10px;
+}
+
+.letter-text {
+    font-size: 42px;
+    font-weight: bold;
+    color: #9333ea;
+    margin-bottom: 5px;
+}
+
+.number-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 5px;
+}
+
+.letter-word,
+.number-word {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.sound-icon {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* Game Area */
+.game-area,
+.quiz-area {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.game-content {
+    margin-top: 30px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.game-card {
+    background: white;
+    border: 3px solid #9333ea;
+    border-radius: 20px;
+    padding: 40px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    background: #f3e8ff;
+}
+
+.game-card.matched {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Quiz Styles */
+.quiz-question {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.quiz-emoji {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.quiz-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.quiz-option {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: white;
+    padding: 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.quiz-option:hover {
+    transform: scale(1.05);
+}
+
+.quiz-result {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.result-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #9333ea;
+    margin-bottom: 20px;
+}
+
+.result-score {
+    font-size: 28px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.btn-play-again {
+    background: linear-gradient(135deg, #34d399, #3b82f6);
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-play-again:hover {
+    transform: scale(1.05);
+}
+
+/* Admin Panel */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.admin-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.admin-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f3f4f6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.admin-item-text {
+    font-weight: bold;
+    color: #374151;
+}
+
+.btn-edit {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-edit:hover {
+    background: #2563eb;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #374151;
+}
+
+.modal-form {
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-grid,
+    .game-menu {
+        grid-template-columns: 1fr;
+    }
+    
+    .letter-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .number-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+    
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9333ea;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7c3aed;
+}
+/* Add this or replace your existing home section styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #9b59b6, #3498db, #f368e0);
+  background-attachment: fixed;
+  color: #fff;
+}
+
+/* Header section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(to right, #a445b2, #d41872, #fa4299);
+  color: white;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Main heading same as index */
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+  margin-top: 40px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards layout */
+.card {
+  background-color: white;
+  color: #333;
+  width: 320px;
+  height: 220px;
+  border-radius: 30px;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Icons and titles */
+.card img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+.card h2{
+  color: #7d2ae8;
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+.card p {
+  color: #666;
+}
+.message {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-weight: bold;
+  background: rgba(255,255,255,0.9);
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
