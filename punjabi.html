@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Punjabi Letters</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container game-page">
+    <h1 class="title">📖 ਪੰਜਾਬੀ ਅੱਖਰ ਸਿੱਖੋ</h1>
+    <h2 class="subtitle">Click on a letter to hear how it sounds 🎧</h2>
+
+    <div id="letters-container" class="letters-container"></div>
+
+    <div class="button-box">
+      <button class="btn" onclick="window.location.href='home.html'">🏠 Home</button>
+    </div>
+  </div>
+
+  <script>
+    const letters = [
+      { punjabi: "ਓ", english: "Udaa" },
+      { punjabi: "ਅ", english: "Adaa" },
+      { punjabi: "ਔ", english: "AU" },
+      { punjabi: "ਕ", english: "Ka" },
+      { punjabi: "ਖ", english: "Kha" },
+      { punjabi: "ਗ", english: "Ga" },
+      { punjabi: "ਘ", english: "Gha" },
+      { punjabi: "ਙ", english: "Nga" },
+      { punjabi: "ਚ", english: "Cha" },
+      { punjabi: "ਛ", english: "Chha" },
+      { punjabi: "ਜ", english: "Ja" },
+      { punjabi: "ਝ", english: "Jha" },
+      { punjabi: "ਟ", english: "Ta" },
+      { punjabi: "ਠ", english: "Tha" },
+      { punjabi: "ਡ", english: "Da" },
+      { punjabi: "ਢ", english: "Dha" },
+      { punjabi: "ਣ", english: "Na" },
+      { punjabi: "ਤ", english: "Ta" },
+      { punjabi: "ਥ", english: "Tha" },
+      { punjabi: "ਦ", english: "Da" },
+      { punjabi: "ਧ", english: "Dha" },
+      { punjabi: "ਨ", english: "Na" },
+      { punjabi: "ਪ", english: "Pa" },
+      { punjabi: "ਫ", english: "Pha" },
+      { punjabi: "ਬ", english: "Ba" },
+      { punjabi: "ਭ", english: "Bha" },
+      { punjabi: "ਮ", english: "Ma" },
+      { punjabi: "ਯ", english: "Ya" },
+      { punjabi: "ਰ", english: "Ra" },
+      { punjabi: "ਲ", english: "La" },
+      { punjabi: "ਵ", english: "Va" },
+      { punjabi: "ਸ", english: "Sa" },
+      { punjabi: "ਹ", english: "Ha" }
+    ];
+
+    const container = document.getElementById("letters-container");
+
+    letters.forEach(l => {
+      const card = document.createElement("div");
+      card.classList.add("letter-card");
+      card.innerHTML = `
+        <div class="letter">${l.punjabi}</div>
+        <div class="english">${l.english}</div>
+      `;
+      card.addEventListener("click", () => speakLetter(l.punjabi));
+      container.appendChild(card);
+    });
+
+    function speakLetter(letter) {
+      const msg = new SpeechSynthesisUtterance(letter);
+      msg.lang = "pa-IN"; // Punjabi language voice
+      window.speechSynthesis.speak(msg);
+    }
+  </script>
+</body>
+</html>
